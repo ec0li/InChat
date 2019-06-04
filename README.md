@@ -6,7 +6,7 @@
 [![QQ群](https://img.shields.io/badge/QQ%E7%BE%A4-628793702-yellow.svg)](https://jq.qq.com/?_wv=1027&k=57X4L74)
 [![作者](https://img.shields.io/badge/%E4%BD%9C%E8%80%85-MySelf-blue.svg)](https://github.com/UncleCatMySelf)
 [![Netty入门](https://img.shields.io/badge/%E5%AD%A6%E4%B9%A0-Netty%E5%85%A5%E9%97%A8-ff69b4.svg)](doc/study/mulu.md)
-[![Maven](https://img.shields.io/badge/Maven-1.1.2-orange.svg)](https://mvnrepository.com/artifact/com.github.UncleCatMySelf/InChat)
+[![Maven](https://img.shields.io/badge/Maven-1.1.3-orange.svg)](https://mvnrepository.com/artifact/com.github.UncleCatMySelf/InChat)
 
 
 </div>
@@ -21,6 +21,8 @@
 
 **[代码贡献指南](http://www.imooc.com/article/272573)**
 
+> 目前项目更新内容：补充文案、设计稿说明、使用说明等
+
 ## Maven版本
 
 功能列表：
@@ -31,17 +33,21 @@
 > * 群聊
 > * 获取在线用户数与用户标签列表
 > * 发送系统通知
+> * 1.1.3版本新增SSL加密，分布式测试点对点、群聊功能（分布式为试用版，暂不支持SSL加密）
 
-* [V1.1.2版本使用说明](https://unclecatmyself.github.io/2019/01/03/inchatby112/)
-* [V1.1.2版本视频教学](https://v.qq.com/x/page/y08228i7znk.html)
+* [InChatV1.1.3版本使用说明](https://unclecatmyself.github.io/2019/01/15/inchatby113/)
 
 ```
 <dependency>
     <groupId>com.github.UncleCatMySelf</groupId>
     <artifactId>InChat</artifactId>
-    <version>1.1.2</version>
+    <version>1.1.3</version>
 </dependency>
 ```
+
+## 里程碑
+
+* [InChat项目里程碑-历史版本](doc/goal/goal.md)
 
 ## 项目日志
 
@@ -55,16 +61,14 @@
 > * [登录模块详细设计](doc/detail/Login-cn.md)
 > * [登录模块整改版V0.1](doc/detail/login_rect.md)
 
-## 里程碑
-
-* [InChat项目里程碑](doc/goal/goal.md)
-
 ## 相关资料（欢迎贡献）
 
 * [QQ群建议贡献](doc/advice/advice.md)
 
 ## 效果展示
 
+![加密](https://raw.githubusercontent.com/UncleCatMySelf/img-myself/master/img/inchatGIF/%E5%8A%A0%E5%AF%86.gif)
+![分布式](https://raw.githubusercontent.com/UncleCatMySelf/img-myself/master/img/inchatGIF/%E5%88%86%E5%B8%83%E5%BC%8F.gif)
 ![demo](https://github.com/UncleCatMySelf/img-myself/blob/master/img/inchatGIF/inchat_demo.gif)
 ![log](https://github.com/UncleCatMySelf/img-myself/blob/master/img/inchatGIF/inchat_log.gif)
 ![postman](https://github.com/UncleCatMySelf/img-myself/blob/master/img/inchatGIF/inchat_postman.gif)
@@ -82,10 +86,11 @@ https://github.com/UncleCatMySelf/SBToNettyChat/issues
 
 [!Noseparte说: 开源项目InChat贡献记](https://www.imooc.com/article/272573)
 
-## 赞助
+## 公众号：Java猫说
 
-打赏时请记得备注上你的github账号或者其他链接，谢谢支持！
+**学习交流群：728698035**
 
-![Image text](https://raw.githubusercontent.com/UncleCatMySelf/img-myself/master/img/%E4%BB%98%E6%AC%BE.png)
-![Image text](https://raw.githubusercontent.com/UncleCatMySelf/img-myself/master/img/%E6%94%AF%E4%BB%98%E5%AE%9D.png)
+> 现架构设计（码农）兼创业技术顾问，不羁平庸，热爱开源，杂谈程序人生与不定期干货。
+
+![Image Text](https://user-gold-cdn.xitu.io/2018/12/28/167f41f1a5729856?w=344&h=344&f=jpeg&s=8231)
 

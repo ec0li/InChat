@@ -109,7 +109,6 @@ public class HttpChannelServiceImpl implements HttpChannelService {
     @Override
     public void sendInChat(String token, Map msg) {
         String address = RedisUtil.getAddress(RedisUtil.convertMD5(WsCacheMap.getByJedis(token)));
-        System.out.println(address);
         String[] str = address.split(":");
         try {
             HttpClient.getInstance().send(str[0],Integer.parseInt(str[1]),token,msg);
@@ -127,9 +126,9 @@ public class HttpChannelServiceImpl implements HttpChannelService {
         }catch (NullPointerException e){
             e.printStackTrace();
         }
-        FullHttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST);
-        response.headers().set(HttpConstant.CONTENT_TYPE,HttpConstant.APPLICATION_JSON);
-        channel.writeAndFlush(response);
+//        FullHttpResponse response = new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST);
+//        response.headers().set(HttpConstant.CONTENT_TYPE,HttpConstant.APPLICATION_JSON);
+//        channel.writeAndFlush(response);
         close(channel);
     }
 }

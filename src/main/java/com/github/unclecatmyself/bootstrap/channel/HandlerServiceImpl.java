@@ -137,8 +137,13 @@ public class HandlerServiceImpl extends HandlerService {
             if (!token.equals(item)){
                 if (websocketChannelService.hasOther((String) item)){
                     Channel other = websocketChannelService.getChannel((String) item);
-                    other.writeAndFlush(new TextWebSocketFrame(
-                            gson.toJson(inChatBackMapService.sendGroup(token,value,groupId))));
+                    if (other == null){
+                        //转http分布式
+                        httpChannelService.sendInChat((String) item,inChatBackMapService.sendGroup(token,value,groupId));
+                    }else{
+                        other.writeAndFlush(new TextWebSocketFrame(
+                                gson.toJson(inChatBackMapService.sendGroup(token,value,groupId))));
+                    }
                 }else{
                     no_online.add((String) item);
                 }
@@ -162,6 +167,19 @@ public class HandlerServiceImpl extends HandlerService {
         }else{
             channel.writeAndFlush(new TextWebSocketFrame(gson.toJson(inChatBackMapService.loginError())));
             close(channel);
+        }
+    }
+
+    @Override
+    public void sendPhotoToMe(Channel channel, Map<String, Object> maps) {
+        Gson gson = new Gson();
+        System.out.println(maps.get(Constans.VALUE));
+        channel.writeAndFlush(new TextWebSocketFrame(
+                gson.toJson(inChatBackMapService.sendMe((String) maps.get(Constans.VALUE)))));
+        try {
+            dataAsynchronousTask.writeData(maps);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
